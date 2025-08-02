@@ -462,6 +462,22 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
+    function initFormAnimations() {
+        const formControls = document.querySelectorAll('.form-control');
+    
+        formControls.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('focused');
+            });
+    
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    input.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    }
+    
 
     // ✅ Contact Form Submission Logic (unchanged)
     const form = document.getElementById('contact-form');
