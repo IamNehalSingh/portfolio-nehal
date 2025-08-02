@@ -2527,7 +2527,40 @@ section {
   opacity: 0.1;
   border-radius: 50%;
 }
+/*Profile Image adjustment in the mobile view*/
+@media (max-width: 768px) {
+  .profile-image-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+  .profile-image {
+    width: 165px;
+    height: 165px;
+  }
+  .profile-border-ring {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+  }
+}
 
+@media (max-width: 480px) {
+  .profile-image-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+  .profile-image {
+    width: 135px;
+    height: 135px;
+  }
+  .profile-border-ring {
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+  }
+}
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero-layout {
