@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nehal Singh Parmar - SDET Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
@@ -94,9 +96,9 @@
                             <div class="profile-glow"></div>
                             <div class="profile-border-ring"></div>
                             <div class="profile-image">
-                                <img src="Nehal.jpeg" alt="Nehal Singh Parmar" class="profile-img">                      
+                                <img src="Nehal.jpeg" alt="Nehal Singh Parmar" class="profile-img">
                             </div>
-                          <!-- 
+                            <!-- 
                             <div class="profile-image">
                                 <div class="profile-initials">NSP</div>
                             </div>-->
@@ -167,7 +169,7 @@
                             <span class="btn-text">Contact Me</span>
                             <div class="btn-ripple"></div>
                         </a>
-                        <a href="mailto:iamnehalsingh01@gmail.com" class="btn btn-secondary glow-btn">
+                        <a id="downloadBtn" class="btn btn-secondary glow-btn">
                             <span class="btn-icon">📄</span>
                             <span class="btn-text">Download Resume</span>
                             <div class="btn-ripple"></div>
@@ -178,6 +180,17 @@
                             <div class="btn-ripple"></div>
                         </a>
                     </div>
+                    <!-- ✅ Email Popup for Resume Download -->
+                    <div id="emailPopup" class="email-popup">
+                        <h3>Enter your email to download resume</h3>
+                        <input type="email" id="emailInput" placeholder="Enter your email" required>
+
+                        <div class="popup-buttons">
+                            <button id="submitEmail" class="popup-submit">Submit & Download</button>
+                            <button id="closePopup" class="popup-cancel">Cancel</button>
+                        </div>
+                    </div>
+
 
                     <!-- Skills Preview -->
                     <div class="skills-preview animate-in" style="animation-delay: 2.8s;">
@@ -271,7 +284,8 @@
                         <div class="card-content">
                             <div class="card-icon">🎯</div>
                             <h3 class="card-title">Mission</h3>
-                            <p>Passionate SDET with 3+ years of experience in automation testing, API validation, and quality assurance. Dedicated to delivering robust, high-quality software solutions.</p>
+                            <p>Passionate SDET with 3+ years of experience in automation testing, API validation, and
+                                quality assurance. Dedicated to delivering robust, high-quality software solutions.</p>
                         </div>
                     </div>
                     <div class="about-card card-animate">
@@ -279,7 +293,8 @@
                         <div class="card-content">
                             <div class="card-icon">💡</div>
                             <h3 class="card-title">Innovation</h3>
-                            <p>Specialized in designing automation frameworks using cutting-edge technologies like Selenium, TestNG, and Cucumber BDD with Page Object Model design patterns.</p>
+                            <p>Specialized in designing automation frameworks using cutting-edge technologies like
+                                Selenium, TestNG, and Cucumber BDD with Page Object Model design patterns.</p>
                         </div>
                     </div>
                     <div class="about-card card-animate">
@@ -287,7 +302,8 @@
                         <div class="card-content">
                             <div class="card-icon">🚀</div>
                             <h3 class="card-title">Growth</h3>
-                            <p>Continuously evolving through hands-on practice in Appium, Rest Assured, and Performance Testing while staying current with industry best practices.</p>
+                            <p>Continuously evolving through hands-on practice in Appium, Rest Assured, and Performance
+                                Testing while staying current with industry best practices.</p>
                         </div>
                     </div>
                 </div>
@@ -316,9 +332,12 @@
                             <div class="timeline-location">Capital Cyber Scape</div>
                         </div>
                         <ul class="timeline-responsibilities">
-                            <li>Designing and maintaining automation frameworks using Java, Selenium WebDriver, TestNG, and Cucumber (BDD)</li>
-                            <li>Performing API testing using Postman and JMeter; validating REST APIs for key endpoints</li>
-                            <li>Conducting end-to-end backend testing using Magento, Firebase, MoEngage, and internal event loggers</li>
+                            <li>Designing and maintaining automation frameworks using Java, Selenium WebDriver, TestNG,
+                                and Cucumber (BDD)</li>
+                            <li>Performing API testing using Postman and JMeter; validating REST APIs for key endpoints
+                            </li>
+                            <li>Conducting end-to-end backend testing using Magento, Firebase, MoEngage, and internal
+                                event loggers</li>
                             <li>Contributing to CI/CD pipelines using Jenkins and GitHub for seamless integration</li>
                             <li>Executing cross-browser and UI/UX testing using LambdaTest</li>
                         </ul>
@@ -336,7 +355,8 @@
                             <div class="timeline-location">Navi Mumbai, Maharashtra</div>
                         </div>
                         <ul class="timeline-responsibilities">
-                            <li>Automated web and API test cases using Selenium (Java) and Postman, reducing regression effort by over 60%</li>
+                            <li>Automated web and API test cases using Selenium (Java) and Postman, reducing regression
+                                effort by over 60%</li>
                             <li>Led backend validation initiatives and contributed to performance testing</li>
                             <li>Participated in defect triage meetings and collaborated with developers</li>
                             <li>Maintained reusable test scripts and enhanced automation framework</li>
@@ -443,7 +463,9 @@
                         <span class="tech-tag">Jenkins</span>
                         <span class="tech-tag">LambdaTest</span>
                     </div>
-                    <p class="project-description">Leading comprehensive QA testing across MamaEarth's multi-platform ecosystem. Built robust automation suites with Selenium WebDriver and Cucumber BDD framework, ensuring seamless user experiences across web and mobile platforms.</p>
+                    <p class="project-description">Leading comprehensive QA testing across MamaEarth's multi-platform
+                        ecosystem. Built robust automation suites with Selenium WebDriver and Cucumber BDD framework,
+                        ensuring seamless user experiences across web and mobile platforms.</p>
                     <div class="project-stats">
                         <div class="stat">
                             <div class="stat-number" data-target="95">0</div>
@@ -468,7 +490,9 @@
                         <span class="tech-tag">MoEngage</span>
                         <span class="tech-tag">Jenkins</span>
                     </div>
-                    <p class="project-description">End-to-end testing for DermaCo's e-commerce platform, focusing on event tracking and user journey validation. Implemented comprehensive testing pipelines for faster, more reliable releases.</p>
+                    <p class="project-description">End-to-end testing for DermaCo's e-commerce platform, focusing on
+                        event tracking and user journey validation. Implemented comprehensive testing pipelines for
+                        faster, more reliable releases.</p>
                     <div class="project-stats">
                         <div class="stat">
                             <div class="stat-number" data-target="88">0</div>
@@ -556,7 +580,8 @@
                         <div class="contact-icon">📧</div>
                         <div class="contact-details">
                             <div class="contact-label">Email</div>
-                            <a href="mailto:iamnehalsingh01@gmail.com" class="contact-value">iamnehalsingh01@gmail.com</a>
+                            <a href="mailto:iamnehalsingh01@gmail.com"
+                                class="contact-value">iamnehalsingh01@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -602,4 +627,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>
