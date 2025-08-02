@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+</script>
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
@@ -624,10 +625,29 @@
             </div>
         </div>
     </footer>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-    <script src="app.js"></script>
+   <!-- ✅ Initialize Firebase using ES modules -->
+   <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+    // ✅ Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAr11SoU8yJWJCtncwuvJPjCLn4yur1UdM",
+        authDomain: "nehal-portfolio-2c5fe.firebaseapp.com",
+        projectId: "nehal-portfolio-2c5fe",
+        storageBucket: "nehal-portfolio-2c5fe.appspot.com",
+        messagingSenderId: "364222198131",
+        appId: "1:364222198131:web:083f38b17f00527cc31506",
+        measurementId: "G-2FQG82B1ER"
+    };
+
+    // ✅ Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+</script>
+
+<!-- ✅ Your main JS file -->
+<script src="app.js"></script>
 
 </body>
-
 </html>
