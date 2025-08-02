@@ -1,17 +1,4 @@
-// ✅ Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyAr11SoU8yJWJCtncwuvJPjCLn4yur1UdM",
-    authDomain: "nehal-portfolio-2c5fe.firebaseapp.com",
-    projectId: "nehal-portfolio-2c5fe",
-    storageBucket: "nehal-portfolio-2c5fe.firebasestorage.app",
-    messagingSenderId: "364222198131",
-    appId: "1:364222198131:web:083f38b17f00527cc31506",
-    measurementId: "G-2FQG82B1ER"
-  };
-  
-  // ✅ Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+
 // Enhanced Portfolio JavaScript with Comprehensive Homepage Animations
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize all animations and interactions
@@ -31,6 +18,20 @@ document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
     initParallaxEffects();
     initFloatingShapes();
+    // ✅ Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyAr11SoU8yJWJCtncwuvJPjCLn4yur1UdM",
+    authDomain: "nehal-portfolio-2c5fe.firebaseapp.com",
+    projectId: "nehal-portfolio-2c5fe",
+    storageBucket: "nehal-portfolio-2c5fe.firebasestorage.app",
+    messagingSenderId: "364222198131",
+    appId: "1:364222198131:web:083f38b17f00527cc31506",
+    measurementId: "G-2FQG82B1ER"
+  };
+  
+  // ✅ Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
 
     // Loading Screen Animation
     function initLoadingScreen() {
