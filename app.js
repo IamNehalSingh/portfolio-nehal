@@ -1,3 +1,17 @@
+// ✅ Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyAr11SoU8yJWJCtncwuvJPjCLn4yur1UdM",
+    authDomain: "nehal-portfolio-2c5fe.firebaseapp.com",
+    projectId: "nehal-portfolio-2c5fe",
+    storageBucket: "nehal-portfolio-2c5fe.firebasestorage.app",
+    messagingSenderId: "364222198131",
+    appId: "1:364222198131:web:083f38b17f00527cc31506",
+    measurementId: "G-2FQG82B1ER"
+  };
+  
+  // ✅ Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
 // Enhanced Portfolio JavaScript with Comprehensive Homepage Animations
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize all animations and interactions
@@ -520,41 +534,56 @@ document.addEventListener('DOMContentLoaded', function () {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
         // ✅ Resume Download Popup Logic
-        const downloadBtn = document.getElementById('downloadBtn');
-        const emailPopup = document.getElementById('emailPopup');  // ✅ must define this
-        const closePopup = document.getElementById('closePopup');
-        const submitEmail = document.getElementById('submitEmail');
-        const emailInput = document.getElementById('emailInput');
+const downloadBtn = document.getElementById('downloadBtn');
+const emailPopup = document.getElementById('emailPopup');
+const closePopup = document.getElementById('closePopup');
+const submitEmail = document.getElementById('submitEmail');
+const emailInput = document.getElementById('emailInput');
 
-        if (downloadBtn) {
-            downloadBtn.addEventListener('click', () => {
-                emailPopup.style.display = 'block';
+if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+        emailPopup.style.display = 'block';
+    });
+}
+
+if (closePopup) {
+    closePopup.addEventListener('click', () => {
+        emailPopup.style.display = 'none';
+    });
+}
+
+if (submitEmail) {
+    submitEmail.addEventListener('click', () => {
+        const email = emailInput.value;
+
+        if (email) {
+            console.log("📩 Email captured:", email);
+
+            // ✅ Save email to Firestore
+            db.collection("resume_downloads").add({
+                email: email,
+                timestamp: new Date()
+            })
+            .then(() => {
+                console.log("✅ Email saved to Firestore:", email);
+            })
+            .catch((error) => {
+                console.error("❌ Error saving email:", error);
             });
-        }
 
-        if (closePopup) {
-            closePopup.addEventListener('click', () => {
-                emailPopup.style.display = 'none';
-            });
-        }
+            emailPopup.style.display = 'none';
 
-        if (submitEmail) {
-            submitEmail.addEventListener('click', () => {
-                const email = emailInput.value;
-                if (email) {
-                    console.log("📩 Email captured:", email);
-                    emailPopup.style.display = 'none';  // ✅ now no redline
-
-                    // ✅ Trigger the resume download
-                    const link = document.createElement('a');
-                    link.href = 'Nehal_Singh_Parmar_resume.pdf';
-                    link.download = 'Nehal_Singh_Parmar_resume.pdf';
-                    link.click();
-                } else {
-                    alert('Please enter a valid email!');
-                }
-            });
+            // ✅ Trigger the resume download
+            const link = document.createElement('a');
+            link.href = 'Nehal_Singh_Parmar_resume.pdf';
+            link.download = 'Nehal_Singh_Parmar_resume.pdf';
+            link.click();
+        } else {
+            alert('Please enter a valid email!');
         }
+    });
+}
+    
 
 
 
