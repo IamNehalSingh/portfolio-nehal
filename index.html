@@ -9,6 +9,7 @@
 </head>
 
 </script>
+
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
@@ -641,9 +642,26 @@
             measurementId: "G-2FQG82B1ER"
         };
 
-        // ✅ Initialize Firebase (COMPAT STYLE)
+        // ✅ Firebase setup
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
+
+        // ✅ Track visitor on page load
+        fetch('https://ipinfo.io/json?token=86d63396f502a9')
+            .then(response => response.json())
+            .then(data => {
+                db.collection("site_visits").add({
+                    ip: data.ip,
+                    city: data.city,
+                    region: data.region,
+                    country: data.country,
+                    org: data.org,
+                    timestamp: new Date()
+                })
+                    .then(() => console.log("✅ Visit logged:", data.ip))
+                    .catch(err => console.error("❌ Error logging visit:", err));
+            })
+            .catch(err => console.error("❌ Could not fetch IP info:", err));
     </script>
 
     <!-- ✅ Your main JS file -->
